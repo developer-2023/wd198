@@ -8,22 +8,33 @@
 <body>
     
     <script>
+        function Magazine(title) {
+            this.title = title;
+            this.adverts = [];
 
-        const arr = [];
-        arr[0] = {a: 12};
-        arr.push({b: 34});
-        arr.push({c: 76});
-        console.log(arr);
+            this.addAdvert = function(name, page) {
+                
+                this.adverts.push({
+                    name: name,
+                    page: page
+                });
+            }
+
+            this.printAdverts = function() {
+                for(let i = 0; i < this.adverts.length; i++) {
+                    const a = this.adverts[i];
+                    console.log("Advert:", a.name, a.page);
+                }
+            }
+        }
+
+        const magazine = new Magazine("IT News");
+        magazine.addAdvert("Holiday", 3);
+        magazine.addAdvert("Bike", 4);
+        magazine.printAdverts();
+        // console.log(magazine);
 
 
-        // function Magazine(title) {
-        //     this.title = title;
-        //     this.adverts = [];
-
-        //     this.AddAdvert function() {
-
-        //     }
-        // }
     </script>
 </body>
 </html>
